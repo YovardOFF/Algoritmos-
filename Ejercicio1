@@ -1,0 +1,22 @@
+function seleccion(datos){
+let auxiliar = [... datos];
+
+for (let i = 0; i< datos.length; i++){
+let minimo = auxiliar.slice(i+1)
+             .reduce((a,e,j) => (e<auxiliar[a] ? j+i+1:a),i);
+             if(minimo !=1)
+             {
+                [auxiliar[i], auxiliar[minimo]] = [auxiliar[minimo], auxiliar[i]];
+             
+             }
+            }
+            return auxiliar;
+}
+
+let primos = [9,15,19,5,3,11];
+console.log(primos);
+
+console.log();
+
+let resultado = seleccion(primos);
+console.log(resultado);
